@@ -52,7 +52,7 @@ if uploaded_file is not None:
 
         
         with c1:
-            st.header("TotalMessages")
+            st.header("Total Msgs")
             st.title(total_messages)
 
         with c2:
