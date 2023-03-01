@@ -44,11 +44,11 @@ if uploaded_file is not None:
 
     if(st.sidebar.button("Start Analysis")):
         
-        total_messages,total_media,total_links=helper.fetch_analysis(user_selected,df,startdate,enddate)
+        total_messages,total_media,total_links,total_words=helper.fetch_analysis(user_selected,df,startdate,enddate)
 
 
         st.title("GENERAL STATS")
-        c1,c2,c3=st.columns(3)
+        c1,c2,c3,c4=st.columns(4)
 
         
         with c1:
@@ -62,6 +62,10 @@ if uploaded_file is not None:
         with c3:
             st.header("Links Shared")
             st.title(total_links)
+        with c4:
+            st.header("Total words")
+            st.title(total_words)
+            
 
 
         st.title("WORDCLOUD")
