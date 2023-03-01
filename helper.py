@@ -26,8 +26,11 @@ def fetch_analysis(user_selected,df,startdate,enddate):
         links.extend(extract.find_urls(msg))
 
     total_links=len(links)
+    words = []
+    for Message in df["msgs"]:
+        words.extend(msgs.split())
 
-    return total_msgs,total_media,total_links
+    return total_msgs,total_media,total_links,len(words)
 
 #Group Analysis
 def fetch_group_analysis(df,startdate,enddate):
