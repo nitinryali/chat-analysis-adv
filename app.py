@@ -1,16 +1,16 @@
 import streamlit as st
-import preprocssing
+import preprocessing
 import helper
 import matplotlib.pyplot as plt
 import pandas as pd,seaborn as sns
 st.sidebar.title("WHATSAPP CHAT ANALYZER")
-st.title("MAKE INSIGHTS OUT OF YOUR DATA")
+st.title("KNOW YOUR DATA")
 
-uploaded_file = st.sidebar.file_uploader("Choose a file")
+uploaded_file = st.sidebar.file_uploader("Choose a txt file")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
-    df=preprocssing.preprocessor(data)
+    df=preprocessing.preprocessor(data)
 
     #st.dataframe(df)
 
@@ -47,7 +47,7 @@ if uploaded_file is not None:
         total_messages,total_media,total_links=helper.fetch_analysis(user_selected,df,startdate,enddate)
 
 
-        st.title("GENERAL STATISTICS")
+        st.title("GENERAL STATS")
         c1,c2,c3=st.columns(3)
 
         
