@@ -28,7 +28,7 @@ def fetch_analysis(user_selected,df,startdate,enddate):
     total_links=len(links)
     words = []
     for Message in df["msgs"]:
-        words.extend(msgs.split())
+        words.extend(Message.split())
 
     return total_msgs,total_media,total_links,len(words)
 
